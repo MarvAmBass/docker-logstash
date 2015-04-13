@@ -14,7 +14,7 @@ ENV PATH /opt/logstash/bin:$PATH
 
 COPY entrypoint.sh /
 
-VOLUME ["/conf", "/certs"]
+VOLUME ["/conf", "/certs", "/patterns"]
 
 EXPOSE 5000
 
