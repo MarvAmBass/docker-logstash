@@ -46,6 +46,7 @@ Now the Logstash Container:
     --link elasticsearch:elasticsearch \
     -v "$PWD/conf:/conf" \
     -v "$PWD/certs:/certs" \
+    -v "$PWD/patterns:/patterns" \
     marvambass/logstash
 
 _we create a new container and link it tou our elasticsearch instance by the name __elasticsearch__, we also overwrite the _/conf_ directory with our own configuration directory and the _/certs_ directory to use our certs.
