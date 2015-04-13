@@ -8,6 +8,13 @@ else
   cp /conf/* /etc/logstash/conf.d/
 fi
 
+if [ "empty" = "$(find /patterns -maxdepth 0 -empty -exec echo empty \;)" ]
+then
+  echo ">> no additional patterns found..."
+else
+  cp /patterns/* /opt/logstash/patterns/
+fi
+
 if [ -z ${LOGSTASH_CN+x} ]
 then
   LOGSTASH_CN="logstash"
